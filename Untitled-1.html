@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login - Carta de Felicitações</title>
+  <style>
+    body{
+      margin:0; font-family:Arial, sans-serif; background:#f0f4f3; display:flex; justify-content:center; align-items:center; height:100vh;
+    }
+    .container{
+      width:100%; max-width:400px; background:#fff; padding:30px; border-radius:12px; box-shadow:0 6px 18px rgba(0,0,0,0.1);
+    }
+    h2{text-align:center; color:#1c6b50; margin-bottom:20px;}
+    label{display:block; margin-bottom:8px; font-weight:600;}
+    input[type="text"], input[type="password"]{
+      width:100%; padding:10px; margin-bottom:15px; border:1px solid #ccc; border-radius:8px;
+    }
+    button{
+      width:100%; padding:12px; background:#1c6b50; color:#fff; border:none; border-radius:8px; font-size:16px; cursor:pointer;
+    }
+    button:hover{background:#155b42;}
+    .error{color:red; font-size:14px; margin-bottom:10px; text-align:center; display:none;}
+
+    /* Carta */
+    .carta-container{display:none; max-width:800px; margin:20px auto; background:#fff; border-radius:16px; padding:40px; box-shadow:0 6px 18px rgba(0,0,0,.1);}
+    .carta-container h1{color:#1c6b50; text-align:center; margin-bottom:20px;}
+    .carta-container p{line-height:1.6; margin:14px 0; font-size:16px;}
+    blockquote{margin:20px 0; padding:10px 14px; border-left:4px solid #1c6b50; background:#f7faf9; font-style:italic;}
+    .assinatura{margin-top:30px; font-weight:600;}
+    .meta{color:#666; font-size:14px; margin-top:5px;}
+  </style>
+</head>
+<body>
+  <!-- Login -->
+  <div class="container" id="loginBox">
+    <h2>Login</h2>
+    <div class="error" id="errorMsg">Usuário ou senha incorretos</div>
+    <label for="usuario">Usuário</label>
+    <input type="text" id="usuario" placeholder="Digite o usuário">
+    <label for="senha">Senha</label>
+    <input type="password" id="senha" placeholder="Digite a senha">
+    <button onclick="fazerLogin()">Entrar</button>
+  </div>
+
+  <!-- Carta -->
+  <div class="carta-container" id="carta">
+    <h1>Felicitações de Aniversário</h1>
+    <p>Querido cooperador <strong>Euclides</strong>,</p>
+    <p>Hoje é um dia especial, e não poderíamos deixar de agradecer a Deus pela sua vida. 🎉🙏
+       O Senhor tem te usado como instrumento para abençoar nossa juventude, sempre com dedicação, amor e zelo pela obra.</p>
+    <p>Desejamos que esta nova etapa seja repleta de vitórias, saúde e muitas bênçãos. Que o Espírito Santo continue te fortalecendo e capacitando em tudo, e que cada sonho alinhado com a vontade de Deus se cumpra no tempo certo.</p>
+    <blockquote>“Entrega o teu caminho ao Senhor; confia nele, e ele o fará.” — Salmos 37:5</blockquote>
+    <p>Receba o carinho de todos nós, com votos de um feliz aniversário cheio da presença de Deus! 🎂✨</p>
+    <div class="assinatura">[Do seu auxiliar / Samuel Coimbra]</div>
+    <div class="meta">21/08/2025</div>
+  </div>
+
+  <script>
+    function fazerLogin(){
+      const usuario = document.getElementById("usuario").value;
+      const senha = document.getElementById("senha").value;
+      const errorMsg = document.getElementById("errorMsg");
+
+      // Usuário e senha fixos
+      if(usuario === "Euclides Brito" && senha === "ccb2025"){
+        document.getElementById("loginBox").style.display = "none";
+        document.getElementById("carta").style.display = "block";
+      } else {
+        errorMsg.style.display = "block";
+      }
+    }
+  </script>
+</body>
+</html>
